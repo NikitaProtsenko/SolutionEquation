@@ -33,7 +33,6 @@ namespace MegaSolutionEquation
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.прочитатьИзФайлаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.режимВводаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.режимВыводаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Solution = new System.Windows.Forms.Button();
             this.Answer = new System.Windows.Forms.TextBox();
@@ -58,7 +57,7 @@ namespace MegaSolutionEquation
             this.менюToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(699, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(700, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -66,7 +65,6 @@ namespace MegaSolutionEquation
             // 
             this.менюToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.прочитатьИзФайлаToolStripMenuItem,
-            this.режимВводаToolStripMenuItem,
             this.режимВыводаToolStripMenuItem});
             this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
             this.менюToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
@@ -78,12 +76,6 @@ namespace MegaSolutionEquation
             this.прочитатьИзФайлаToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
             this.прочитатьИзФайлаToolStripMenuItem.Text = "Прочитать из файла";
             this.прочитатьИзФайлаToolStripMenuItem.Click += new System.EventHandler(this.прочитатьИзФайлаToolStripMenuItem_Click);
-            // 
-            // режимВводаToolStripMenuItem
-            // 
-            this.режимВводаToolStripMenuItem.Name = "режимВводаToolStripMenuItem";
-            this.режимВводаToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
-            this.режимВводаToolStripMenuItem.Text = "Режим ввода";
             // 
             // режимВыводаToolStripMenuItem
             // 
@@ -122,7 +114,7 @@ namespace MegaSolutionEquation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 268);
+            this.ClientSize = new System.Drawing.Size(700, 268);
             this.Controls.Add(this.Triangular);
             this.Controls.Add(this.Answer);
             this.Controls.Add(this.Solution);
@@ -146,7 +138,6 @@ namespace MegaSolutionEquation
         private System.Windows.Forms.TextBox Answer;
         private System.Windows.Forms.ToolStripMenuItem менюToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem прочитатьИзФайлаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem режимВводаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem режимВыводаToolStripMenuItem;
         private System.Windows.Forms.RichTextBox Triangular;
     }

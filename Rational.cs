@@ -12,6 +12,21 @@ class Rational
     }
     /*Знаменатель нашей дроби*/
     private int _n;
+    /*Сокращение дроби*/
+    private void FractionReduction()
+    {
+        int temp = Gcd(Math.Abs(_n), Math.Abs(_m));
+        if (temp != 0)
+        {
+            _n = _n / temp;
+            _m = _m / temp;
+        }
+        if (_n < 0)
+        {
+            _m = -_m;
+            _n = -_n;
+        }
+    }
     public int N
     {
         get { return _n; }
@@ -26,6 +41,7 @@ class Rational
         }
         else _n = n;
         _m = m;
+        FractionReduction();
     }
     /*Алгоритм Евклида для избавления от "больших" чисел*/
     private int Gcd(int val1, int val2)
@@ -43,17 +59,7 @@ class Rational
     /*Метод перевода Rational в String*/
     public string RatioToString()
     {
-        int temp = Gcd(Math.Abs(_n), Math.Abs(_m));
-        if (temp != 0)
-        {
-            _n = _n / temp;
-            _m = _m / temp;
-        }
-        if (_n < 0)
-        {
-            _m = -_m;
-            _n = -_n;
-        }
+        FractionReduction();
         if (_n == 1)
             return _m.ToString();
         else return _m + "/" + _n;
