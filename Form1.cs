@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace MegaSolutionEquation
 {
@@ -91,6 +92,19 @@ namespace MegaSolutionEquation
         private void MatrixText_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void прочитатьИзФайлаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.ShowDialog();
+            StreamReader text = new StreamReader(openFile.FileName);
+            string allText = "";
+            while (text.Peek()!=-1)
+            {
+                allText += text.ReadLine() + "\n";
+            }
+            MatrixText.Text = allText;
         }
     }
 }

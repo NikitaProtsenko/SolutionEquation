@@ -128,10 +128,10 @@ using System.Linq;
             Rational[] vector = new Rational[M];
             string x;
             vector[M - 1] = _freeVector[M - 1] / _matrix[N - 1, M - 1];
-            for (int i = N - 2; i > -1; i--)
+            for (int i = N - 2; i >=0; i--)
             {
                 Rational sum = new Rational(0,1);
-                for (int j = M - 1; j > -1; j--)
+                for (int j = i + 1; j < N ; j++)
                 {
                     sum += _matrix[i, j] * vector[j];
                 }

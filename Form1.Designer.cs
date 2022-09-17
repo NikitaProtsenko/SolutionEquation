@@ -58,7 +58,7 @@ namespace MegaSolutionEquation
             this.менюToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(699, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(699, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -77,6 +77,7 @@ namespace MegaSolutionEquation
             this.прочитатьИзФайлаToolStripMenuItem.Name = "прочитатьИзФайлаToolStripMenuItem";
             this.прочитатьИзФайлаToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
             this.прочитатьИзФайлаToolStripMenuItem.Text = "Прочитать из файла";
+            this.прочитатьИзФайлаToolStripMenuItem.Click += new System.EventHandler(this.прочитатьИзФайлаToolStripMenuItem_Click);
             // 
             // режимВводаToolStripMenuItem
             // 
