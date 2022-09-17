@@ -15,7 +15,7 @@ class Rational
     public int N
     {
         get { return _n; }
-        set { _n = value; }
+        set { if (value !=0) _n = value;}
     }
 	/*Конструктор класса*/
     public Rational(int m, int n)
