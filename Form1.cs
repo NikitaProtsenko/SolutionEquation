@@ -36,8 +36,12 @@ namespace MegaSolutionEquation
                 for (int j = 0; j < N; j++)
                     try
                     {
-                        string temp = line.Split(' ')[j] + "/1";
-
+                        string temp = line.Split(' ')[j];
+                        if (temp.Contains(",") == true)
+                        {
+                            temp = temp.Split(',')[0] + temp.Split(',')[1] + '/' + temp.Split(',')[1].Length * 10;
+                        }
+                        else temp = line.Split(' ')[j] + "/1";
                         matrix[i, j] = new Rational(Convert.ToInt32(temp.Split('/')[0]),
                             Convert.ToInt32(temp.Split('/')[1]));
                     }
@@ -53,7 +57,12 @@ namespace MegaSolutionEquation
                     }
                 try
                 {
-                    string temp = line.Split(' ')[N] + "/1";
+                    string temp = line.Split(' ')[N];
+                    if (temp.Contains(",")==true) 
+                    {
+                        temp = temp.Split(',')[0] + temp.Split(',')[1]+'/'+ temp.Split(',')[1].Length*10;
+                    } 
+                    else temp = line.Split(' ')[N] + "/1";
                     freeVector[i] = new Rational(Convert.ToInt32(temp.Split('/')[0]), 
                         Convert.ToInt32(temp.Split('/')[1])) ;
                 }
@@ -69,6 +78,8 @@ namespace MegaSolutionEquation
                 }
             }
             TEquation equation = new TEquation(matrix, freeVector, N, M);
+            equation.ReductionTriangularForm();
+            Triangular.Text = "Треугольный вид:\n"+equation.ToStringMatrix();
             string solution = equation.SystemSolution();
             if (solution == "None")
                 Answer.Text = "Нет решений";

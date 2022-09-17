@@ -37,11 +37,13 @@ namespace MegaSolutionEquation
             this.режимВыводаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Solution = new System.Windows.Forms.Button();
             this.Answer = new System.Windows.Forms.TextBox();
+            this.Triangular = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MatrixText
             // 
+            this.MatrixText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.MatrixText.Location = new System.Drawing.Point(0, 27);
             this.MatrixText.Name = "MatrixText";
             this.MatrixText.Size = new System.Drawing.Size(225, 225);
@@ -56,7 +58,7 @@ namespace MegaSolutionEquation
             this.менюToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(480, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(699, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -106,11 +108,21 @@ namespace MegaSolutionEquation
             this.Answer.Size = new System.Drawing.Size(234, 26);
             this.Answer.TabIndex = 3;
             // 
+            // Triangular
+            // 
+            this.Triangular.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.Triangular.Location = new System.Drawing.Point(471, 27);
+            this.Triangular.Name = "Triangular";
+            this.Triangular.Size = new System.Drawing.Size(225, 225);
+            this.Triangular.TabIndex = 4;
+            this.Triangular.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 268);
+            this.ClientSize = new System.Drawing.Size(699, 268);
+            this.Controls.Add(this.Triangular);
             this.Controls.Add(this.Answer);
             this.Controls.Add(this.Solution);
             this.Controls.Add(this.MatrixText);
@@ -135,6 +147,7 @@ namespace MegaSolutionEquation
         private System.Windows.Forms.ToolStripMenuItem прочитатьИзФайлаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem режимВводаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem режимВыводаToolStripMenuItem;
+        private System.Windows.Forms.RichTextBox Triangular;
     }
 }
 

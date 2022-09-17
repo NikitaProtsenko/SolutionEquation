@@ -169,34 +169,48 @@ using System.Linq;
         }
 
     }
-    // Создание класса наследника.
-    class TEquation : TSimpleEquation
+// Создание класса наследника.
+class TEquation : TSimpleEquation
+{
+    public TEquation(Rational[,] matrixUser, Rational[] freeVectorUser, int n, int m) : base(matrixUser, freeVectorUser, n, m)
     {
-        public TEquation(Rational[,] matrixUser, Rational[] freeVectorUser, int n, int m) : base(matrixUser, freeVectorUser, n, m)
-        {
-        }
+    }
 
-        // Приведение к треугольному виду.
-        public void ReductionTriangularForm()
+    // Приведение к треугольному виду.
+    public void ReductionTriangularForm()
+    {
+        Rational koe = new Rational(0, 1);
+        for (int k = 0; k < N; k++)
         {
-            Rational koe = new Rational(0,1);
-            for (int k = 0; k < N; k++)
+            for (int j = k + 1; j < M; j++)
             {
-                for (int j = k + 1; j < M; j++)
+                koe = _matrix[j, k] / _matrix[k, k];
+                for (int i = k; i < M; i++)
                 {
-                    koe = _matrix[j, k] / _matrix[k, k];
-                    for (int i = k; i < M; i++)
-                    {
-                        _matrix[j, i] = _matrix[j, i] - koe * _matrix[k, i];
-                    }
-                    _freeVector[j] = _freeVector[j] - koe * _freeVector[k];
+                    _matrix[j, i] = _matrix[j, i] - koe * _matrix[k, i];
                 }
+                _freeVector[j] = _freeVector[j] - koe * _freeVector[k];
             }
         }
-        public override string SystemSolution()
-        {
-            ReductionTriangularForm();
-            return MethodGauss();
-        }
     }
+    public override string SystemSolution()
+    {
+        ReductionTriangularForm();
+        return MethodGauss();
+    }
+
+    public string ToStringMatrix()
+    {
+        string text = "";
+        for (int i = 0; i<N; i++)
+        {
+            for (int j = 0; j<M; j++)
+            {
+                text += _matrix[i, j].RatioToString() + " ";
+            }
+            text += _freeVector[i].RatioToString()+"\n";
+        }
+        return text;
+    }
+}
     
