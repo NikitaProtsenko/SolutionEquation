@@ -37,6 +37,8 @@ namespace MegaSolutionEquation
             this.Solution = new System.Windows.Forms.Button();
             this.Answer = new System.Windows.Forms.TextBox();
             this.Triangular = new System.Windows.Forms.RichTextBox();
+            this.сПлавающейТочкойToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.рациональноеЧислоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +47,7 @@ namespace MegaSolutionEquation
             this.MatrixText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.MatrixText.Location = new System.Drawing.Point(0, 27);
             this.MatrixText.Name = "MatrixText";
-            this.MatrixText.Size = new System.Drawing.Size(225, 225);
+            this.MatrixText.Size = new System.Drawing.Size(225, 229);
             this.MatrixText.TabIndex = 0;
             this.MatrixText.Text = "";
             this.MatrixText.TextChanged += new System.EventHandler(this.MatrixText_TextChanged);
@@ -79,6 +81,9 @@ namespace MegaSolutionEquation
             // 
             // режимВыводаToolStripMenuItem
             // 
+            this.режимВыводаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.сПлавающейТочкойToolStripMenuItem,
+            this.рациональноеЧислоToolStripMenuItem});
             this.режимВыводаToolStripMenuItem.Name = "режимВыводаToolStripMenuItem";
             this.режимВыводаToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
             this.режимВыводаToolStripMenuItem.Text = "Режим вывода";
@@ -106,9 +111,23 @@ namespace MegaSolutionEquation
             this.Triangular.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.Triangular.Location = new System.Drawing.Point(471, 27);
             this.Triangular.Name = "Triangular";
-            this.Triangular.Size = new System.Drawing.Size(225, 225);
+            this.Triangular.Size = new System.Drawing.Size(225, 229);
             this.Triangular.TabIndex = 4;
             this.Triangular.Text = "";
+            // 
+            // сПлавающейТочкойToolStripMenuItem
+            // 
+            this.сПлавающейТочкойToolStripMenuItem.Name = "сПлавающейТочкойToolStripMenuItem";
+            this.сПлавающейТочкойToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.сПлавающейТочкойToolStripMenuItem.Text = "Плавающая точка";
+            this.сПлавающейТочкойToolStripMenuItem.Click += new System.EventHandler(this.сПлавающейТочкойToolStripMenuItem_Click);
+            // 
+            // рациональноеЧислоToolStripMenuItem
+            // 
+            this.рациональноеЧислоToolStripMenuItem.Name = "рациональноеЧислоToolStripMenuItem";
+            this.рациональноеЧислоToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.рациональноеЧислоToolStripMenuItem.Text = "Рациональное число";
+            this.рациональноеЧислоToolStripMenuItem.Click += new System.EventHandler(this.рациональноеЧислоToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -140,6 +159,8 @@ namespace MegaSolutionEquation
         private System.Windows.Forms.ToolStripMenuItem прочитатьИзФайлаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem режимВыводаToolStripMenuItem;
         private System.Windows.Forms.RichTextBox Triangular;
+        private System.Windows.Forms.ToolStripMenuItem сПлавающейТочкойToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem рациональноеЧислоToolStripMenuItem;
     }
 }
 

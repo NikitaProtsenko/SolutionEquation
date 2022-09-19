@@ -141,7 +141,7 @@ using System.Linq;
             //vector = vector.Reverse().ToArray();
             x = vector[0].RatioToString();
             for (int i = 1; i < M; i++)
-                x += " ; " + vector[i].RatioToString();
+                x += ";" + vector[i].RatioToString();
             return x;
         }
         public virtual string SystemSolution()

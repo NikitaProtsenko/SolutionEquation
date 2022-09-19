@@ -13,6 +13,7 @@ namespace MegaSolutionEquation
 {
     public partial class Form1 : Form
     {
+        private bool _outputType = false;
         public Form1()
         {
             InitializeComponent();
@@ -86,7 +87,22 @@ namespace MegaSolutionEquation
                 Answer.Text = "Нет решений";
             else if (solution == "Inf")
                 Answer.Text = "Бесконечное число решений";
-            else Answer.Text = "X = (" + solution + ")";
+            else
+            {
+                if (_outputType == true)
+                {
+                    string [] solutions = solution.Split(';').Select(x => x = x + "/1").Select(
+                        x => (Convert.ToDouble(x.Split('/')[0]) / Convert.ToDouble(x.Split('/')[1])).ToString()).ToArray();
+                    solution = "";
+                    foreach (string answer in solutions)
+                    {
+                        solution += answer + ";";
+                    }
+                    solution = solution.Remove(solution.Length-1,1);
+
+                }
+                Answer.Text = "X = (" + solution + ")";
+            }
         }
 
         private void MatrixText_TextChanged(object sender, EventArgs e)
@@ -105,6 +121,16 @@ namespace MegaSolutionEquation
                 allText += text.ReadLine() + "\n";
             }
             MatrixText.Text = allText;
+        }
+
+        private void рациональноеЧислоToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _outputType = false;
+        }
+
+        private void сПлавающейТочкойToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _outputType = true;
         }
     }
 }
